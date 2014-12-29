@@ -1,10 +1,19 @@
 #!/bin/bash
-############################
+###################################
 # .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
+#--> This script creates symlinks
+#-->  from the home directory to
+#-->  any desired dotfiles in
+#-->   ~/dotfiles
+#
+#  to run:
+#	git clone in home directory
+#	cd ~/dotfiles
+#	chmod +x makesymlinks.sh
+#	./makesymlinks.sh
+###################################
 
-########## Variables
+##########--> Variables
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
