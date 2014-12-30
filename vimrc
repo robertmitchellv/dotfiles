@@ -12,9 +12,12 @@ call vundle#rc()
 " ////////////////////
 
 Plugin 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdtree' " F2 to turn on (mapped below)
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'nvie/vim-flake8' " press F7 to run flake8 on a python file
+Plugin 'freeo/vim-kalisi' " colorscheme
+Plugin 'davidhalter/jedi-vim'
 
 filetype indent on		    " turns on filetype detection; loads indent
                             " --> also acts like vundle's </close> tag
@@ -41,11 +44,11 @@ set textwidth=79            " lines longer than 79 chars will be broken
 " -->COLORS + FONTS
 " ////////////////////
 
-colorscheme badwolf		    " VIM color template
+colorscheme kalisi  		" VIM color template
 syntax enable			    " enable syntax processing
 set background=dark         " baground is dark
 set term=xterm-256color     " Ensure terminal is not stuck with 4 colors 
-set guifont=Fedra\ Mono\ Std\ Light\ for\ Powerline\ 9
+set guifont=PowerlineSymbols\ 9
 set laststatus=2
 
 " -->SPACES + TABS
@@ -69,3 +72,9 @@ set wildmenu			    " visual autocomplete for command menu
 
 set incsearch			    " search as characters are entered
 set hlsearch			    " highlight matches
+
+" -->KEY BINDINGS
+" ////////////////////
+
+map <F2> :NERDTreeToggle<CR>
+
