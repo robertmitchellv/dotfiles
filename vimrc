@@ -13,7 +13,9 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree.git'
-call vundle#end()           " required
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 filetype indent on		    " turns on filetype detection; loads indent
                             " --> also acts like vundle's </close> tag
 " Brief Help
@@ -36,13 +38,16 @@ filetype indent on		    " turns on filetype detection; loads indent
 set history=700             " how many lines of history VIM remembers
 set textwidth=79            " lines longer than 79 chars will be broken
 
-" -->COLORS
+" -->COLORS + FONTS
 " ////////////////////
 
 colorscheme badwolf		    " VIM color template
 syntax enable			    " enable syntax processing
 set background=dark         " baground is dark
 set term=xterm-256color     " Ensure terminal is not stuck with 4 colors 
+set guifont=Fedra\ Mono\ Std\ Light\ for\ Powerline\ 9
+set laststatus=2
+
 " -->SPACES + TABS
 " ////////////////////
 
