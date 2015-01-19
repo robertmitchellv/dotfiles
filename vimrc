@@ -12,12 +12,18 @@ call vundle#rc()
 " ////////////////////
 
 Plugin 'gmarik/vundle.vim'
+Plugin 'scrooloose/syntastic'   " linting in any language
 Plugin 'scrooloose/nerdtree'    " F2 to turn on (mapped below)
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'nvie/vim-flake8'        " press F7 to run flake8 on a python file
-Plugin 'altercation/vim-colors-solarized' " colorscheme
-Plugin 'davidhalter/jedi-vim'
+Plugin 'tpope/vim-surround'     " Help with brackets and the like
+Plugin 'davidhalter/jedi-vim'   " Python autocomplete
+Plugin 'flazz/vim-colorschemes' " Loads of colorschemes!
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'" Highlighting + indentation
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Raimondi/delimitMate'   " add closing brackets
 
 filetype indent on		        " turns on filetype detection; loads indent
                                 " --> also acts like vundle's </close> tag
@@ -42,15 +48,14 @@ set history=700             " how many lines of history VIM remembers
 set textwidth=79            " lines longer than 79 chars will be broken
 set encoding=utf-8          " use utf-8
 set modelines=0             " prevents some security exploits
-
+let g:syntastic_check_on_open=1     " live linting
 " -->COLORS + FONTS
 " ////////////////////
 
 syntax on   			    " enable syntax processing
-let g:solarized_termcolors=256 " enable degraded color mode
-set t_Co=256                " trying to fix solarized color issues in term
+set t_Co=256                " ensure 256 colors
 set background=dark         " baground is dark
-colorscheme solarized  		" VIM color template
+colorscheme molokai  	    " VIM color template
 set guifont=PowerlineSymbols\ 9
 set laststatus=2
 
