@@ -20,13 +20,7 @@ Plugin 'nvie/vim-flake8'        " press F7 to run flake8 on a python file
 Plugin 'tpope/vim-surround'     " Help with brackets and the like
 Plugin 'davidhalter/jedi-vim'   " Python autocomplete
 Plugin 'flazz/vim-colorschemes' " Loads of colorschemes!
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'" Highlighting + indentation
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Raimondi/delimitMate'   " add closing brackets
-
-filetype indent on		        " turns on filetype detection; loads indent
-                                " --> also acts like vundle's </close> tag
+                              " --> also acts like vundle's </close> tag
 " Brief Help
 "  :PluginList          -   lists configuration plugins
 "  :PluginInstall       -   installs plugins; append '!' to update or
@@ -49,6 +43,7 @@ set textwidth=79            " lines longer than 79 chars will be broken
 set encoding=utf-8          " use utf-8
 set modelines=0             " prevents some security exploits
 let g:syntastic_check_on_open=1     " live linting
+
 " -->COLORS + FONTS
 " ////////////////////
 
