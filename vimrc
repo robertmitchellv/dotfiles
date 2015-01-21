@@ -34,10 +34,13 @@ Plugin 'airblade/vim-gitgutter' " shows a git diff in the gutter
 Plugin 'powerline/powerline'    " use powerline fonts for airline
 Plugin 'jmcantrell/vim-virtualenv'
 " work with python virtualenvs in vim
-Plugin 'CruizeMissile/Revolution.vim'
-" dark colorscheme
-Plugin 'altercation/vim-colors-solarized'
-" solarized colorscheme
+Plugin 'tomasr/molokai'         " Molokai color scheme
+Plugin 'croaky/vim-colors-github'
+" Github color scheme (light)
+Plugin 'vim-scripts/lettuce.vim'
+" colorscheme
+Plugin 'vim-scripts/blacklight' 
+" colorscheme
 
 call vundle#end()
 filetype plugin indent on       " --> also acts like vundle's </close> tag
@@ -71,7 +74,7 @@ let g:syntastic_check_on_open=1
 
 syntax enable   		    " enable syntax processing
 set t_Co=256                " ensure 256 colors
-colorscheme Revolution      " VIM color template
+colorscheme lettuce         " VIM color template
 set laststatus=2
 let g:airline_powerline_fonts = 1
 " automatically populate airline with powerline symbols
