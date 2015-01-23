@@ -1,21 +1,22 @@
 " @robermitchellv
 
-" -->VUNDLE
+" -->VUNDLE SET UP
 " ////////////////////
 
 set nocompatible                
-" no vi backwards compatability; required
+" Required! No vi backwards compatability
 
 filetype off                    
-" required; seems like vundle's <open> tag
+" Required! seems like vundle's <open> tag
 
 set rtp+=~/dotfiles/vim/bundle/Vundle.vim/
-call vundle#begin()
+call vundle#begin()             " Required!
 
-" -->PLUGINS
-" ////////////////////
 
-Plugin 'gmarik/Vundle.vim'      " plugin for Vundle
+" ============================VUNDLE PLUGINS START============================ 
+
+
+Plugin 'gmarik/Vundle.vim'      " Required! Vundle manages Vundle
 Plugin 'scrooloose/syntastic'   " linting in any language
 Plugin 'scrooloose/nerdtree'    " F2 to turn on (mapped below)
 Plugin 'tpope/vim-fugitive'     " Git wrapper
@@ -34,6 +35,7 @@ Plugin 'airblade/vim-gitgutter' " shows a git diff in the gutter
 Plugin 'powerline/powerline'    " use powerline fonts for airline
 Plugin 'jmcantrell/vim-virtualenv'
 " work with python virtualenvs in vim
+Plugin 'twbs/bootlint'          " HTML linter for bootstrap projects
 Plugin 'tomasr/molokai'         " Molokai color scheme
 Plugin 'croaky/vim-colors-github'
 " Github color scheme (light)
@@ -42,10 +44,10 @@ Plugin 'vim-scripts/lettuce.vim'
 Plugin 'vim-scripts/blacklight' 
 " colorscheme
 
-call vundle#end()
+call vundle#end()               " Required!
 filetype plugin indent on       " --> also acts like vundle's </close> tag
-
-" Brief Help
+                                " Requiered!
+" Vundle Help
 "  :PluginList          -   lists configuration plugins
 "  :PluginInstall       -   installs plugins; append '!' to update or
 "  :PluginUpdate
@@ -56,10 +58,10 @@ filetype plugin indent on       " --> also acts like vundle's </close> tag
 " see :h vundle for more details
 
 
-" NON PLUGIN RELATED BELOW
-" ++++++++++++++++++++++++++++++++++++++++ 
+" =============================VUNDLE PLUGINS END============================= 
+  
 
-" -->GENERAL
+" -->GENERAL SETTINGS
 " ////////////////////
 
 set history=700             " how many lines of history VIM remembers
@@ -68,6 +70,7 @@ set encoding=utf-8          " use utf-8
 set modelines=0             " prevents some security exploits
 let g:syntastic_check_on_open=1
 " live linting
+
 
 " -->COLORS + FONTS
 " ////////////////////
@@ -79,13 +82,17 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 " automatically populate airline with powerline symbols
 
+
 " -->SPACES + TABS + LINES
 " ////////////////////
 
+set expandtab			    " TABs = spaces
 set tabstop=4			    " number of visual spaces per TAB
 set softtabstop=4		    " number of spaces in tab when editing
-set expandtab			    " TABs = spaces
+set shiftwidth=2            " control how many columns text indents
 set colorcolumn=80
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+" html specific space and tab settings
 
 " -->UI CONFIG
 " ////////////////////
@@ -95,14 +102,17 @@ set showcmd			        " show command in bottom bar
 set cursorline			    " highlight current line
 set wildmenu			    " visual autocomplete for command menu
 
+
 " -->SEARCHING
 " ////////////////////
 
 set incsearch			    " search as characters are entered
 set hlsearch			    " highlight matches
 
+
 " -->KEY BINDINGS
 " ////////////////////
 
 map <F2> :NERDTreeToggle<CR>
+
 
