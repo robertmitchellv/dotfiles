@@ -1,3 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =2
 let g:netrw_dirhist_1='/home/robertmitchellv/.ipython'
+let g:netrw_dirhist_2='/home/robertmitchellv/GitHub/Clones/foothill-cs-coursework/CS21A-Javascript/assign1-4'
