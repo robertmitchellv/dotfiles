@@ -9,7 +9,7 @@ set nocompatible
 filetype off                    
 " Required! seems like vundle's <open> tag
 
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim/
+set rtp+=~/Dotfiles/vim/bundle/Vundle.vim/
 call vundle#begin()             " Required!
 
 
@@ -37,12 +37,7 @@ Plugin 'jmcantrell/vim-virtualenv'
 " work with python virtualenvs in vim
 Plugin 'twbs/bootlint'          " HTML linter for bootstrap projects
 Plugin 'tomasr/molokai'         " Molokai color scheme
-Plugin 'croaky/vim-colors-github'
-" Github color scheme (light)
-Plugin 'vim-scripts/lettuce.vim'
-" colorscheme
-Plugin 'vim-scripts/blacklight' 
-" colorscheme
+Plugin 'sjl/badwolf'            " Badwolf color scheme
 
 call vundle#end()               " Required!
 filetype plugin indent on       " --> also acts like vundle's </close> tag
@@ -77,7 +72,9 @@ let g:syntastic_check_on_open=1
 
 syntax enable   		    " enable syntax processing
 set t_Co=256                " ensure 256 colors
-colorscheme lettuce         " VIM color template
+colorscheme badwolf         " VIM color template
+let g:badwolf_darkgutter = 1
+" make the gutters darker than the background
 set laststatus=2
 let g:airline_powerline_fonts = 1
 " automatically populate airline with powerline symbols
