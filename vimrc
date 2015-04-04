@@ -20,9 +20,11 @@ Plugin 'gmarik/Vundle.vim'      " Required! Vundle manages Vundle
 Plugin 'scrooloose/syntastic'   " linting in any language
 Plugin 'scrooloose/nerdtree'    " F2 to turn on (mapped below)
 Plugin 'tpope/vim-fugitive'     " Git wrapper
+Plugin 'tpope/vim-surround'     " Help with brackets and the like
+Plugin 'tpope/vim-fireplace'    " REPL for Clojure
+Plugin 'tpope/vim-leiningen'    " Static Vim support for Leiningen
 Plugin 'bling/vim-airline'      " lean + mean status/tabline for vim
 Plugin 'nvie/vim-flake8'        " press F7 to run flake8 on a python file
-Plugin 'tpope/vim-surround'     " Help with brackets and the like
 Plugin 'davidhalter/jedi-vim'   " Python autocomplete
 Plugin 'Raimondi/delimitMate'   " Add closing quotes, parens, + brackets
 Plugin 'docunext/closetag.vim'  " ctrl + _ = searches for html/xml closing tag

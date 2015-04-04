@@ -12,7 +12,7 @@ setopt always_to_end
 export ZSH=$HOME/.oh-my-zsh
 
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="muse"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
