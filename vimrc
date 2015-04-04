@@ -40,6 +40,7 @@ Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'twbs/bootlint'          " HTML linter for bootstrap projects
 Plugin 'tomasr/molokai'         " Molokai color scheme
 Plugin 'sjl/badwolf'            " Badwolf color scheme
+Plugin 'guns/vim-clojure-static'
 
 call vundle#end()               " Required!
 filetype plugin indent on       " --> also acts like vundle's </close> tag
