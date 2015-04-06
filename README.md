@@ -1,5 +1,5 @@
-+Instructions
+# Dotfiles Readme
+=================
 
-chmod +x makesymlinks.sh
-./makesymlinks.sh
+My dotfiles--a work in progress.
 
