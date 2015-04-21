@@ -11,7 +11,7 @@ setopt always_to_end
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# time that oh-my-zsh is loaded.
+# oh-my-zsh theme
 ZSH_THEME="muse"
 
 # Display red dots whilst waiting for completion.
