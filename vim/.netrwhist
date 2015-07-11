@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/robertmitchellv/.ipython'
 let g:netrw_dirhist_2='/home/robertmitchellv/GitHub/Clones/foothill-cs-coursework/CS21A-Javascript/assign1-4'
 let g:netrw_dirhist_3='/home/robertmitchellv/Dotfiles/vim/bundle'
 let g:netrw_dirhist_4='/home/robertmitchellv/.oh-my-zsh'
 let g:netrw_dirhist_5='/home/robertmitchellv/GitHub/robertmitchellv.github.io/_includes'
 let g:netrw_dirhist_6='/home/robertmitchellv/Dotfiles/vim'
+let g:netrw_dirhist_7='/home/robertmitchellv/Code/shell-scripts/Assignment2'
+let g:netrw_dirhist_8='/home/robertmitchellv/GitHub/Pelican-site/content'
+let g:netrw_dirhist_9='/home/robertmitchellv/GitHub/Pelican-site/my-theme/templates/_includes'

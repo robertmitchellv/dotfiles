@@ -19,26 +19,26 @@ call vundle#begin()             " Required!
 Plugin 'airblade/vim-gitgutter'  " shows a git diff in the gutter
 Plugin 'bling/vim-airline'       " lean + mean status/tabline for vim
 Plugin 'chrisbra/csv.vim'        " filetype plugin for csv
-Plugin 'davidhalter/jedi-vim'    " Python autocomplete
+"Plugin 'davidhalter/jedi-vim'    " Python autocomplete
 Plugin 'docunext/closetag.vim'   " ctrl + _ = searches for html/xml closing tag
 Plugin 'gmarik/Vundle.vim'       " Required! Vundle manages Vundle
 Plugin 'godlygeek/csapprox'      " enable gVim colorschemes to work in terminal
-Plugin 'guns/vim-clojure-static' " Necessary to use clojure repl in vim
-Plugin 'kien/ctrlp.vim'          " fuzzy file, buffer, etc finder
-Plugin 'nvie/vim-flake8'         " press F7 to run flake8 on a python file
+"Plugin 'guns/vim-clojure-static' " Necessary to use clojure repl in vim
+"Plugin 'kien/ctrlp.vim'          " fuzzy file, buffer, etc finder
+"Plugin 'nvie/vim-flake8'         " press F7 to run flake8 on a python file
 Plugin 'majutsushi/tagbar'       " displays tags in window ordered by scope
 Plugin 'powerline/powerline'     " use powerline fonts for airline
 Plugin 'Raimondi/delimitMate'    " Add closing quotes, parens, + brackets
-Plugin 'scrooloose/syntastic'    " linting in any language
+"Plugin 'scrooloose/syntastic'    " linting in any language
 Plugin 'scrooloose/nerdtree'     " F2 to turn on (mapped below)
-Plugin 'Shougo/unite.vim'        " search and display info from files + buffers
+"Plugin 'Shougo/unite.vim'        " search and display info from files + buffers
 Plugin 'sjl/badwolf'             " Badwolf color scheme
 Plugin 'tomasr/molokai'          " Molokai color scheme
 Plugin 'tpope/vim-fugitive'      " Git wrapper
 Plugin 'tpope/vim-surround'      " Help with brackets and the like
-Plugin 'tpope/vim-fireplace'     " REPL for Clojure
-Plugin 'tpope/vim-leiningen'     " Static Vim support for Leiningen
-Plugin 'tpope/vim-classpath'     " Sets path for JVM to current project
+"Plugin 'tpope/vim-fireplace'     " REPL for Clojure
+"Plugin 'tpope/vim-leiningen'     " Static Vim support for Leiningen
+"Plugin 'tpope/vim-classpath'     " Sets path for JVM to current project
 Plugin 'twbs/bootlint'           " HTML linter for bootstrap projects
 
 
