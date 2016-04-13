@@ -14,27 +14,19 @@ call vundle#begin()             " Required!
 
 " ============================VUNDLE PLUGINS START============================ 
 
-Plugin 'sjl/badwolf'             " Badwolf color scheme
-Plugin 'docunext/closetag.vim'   " ctrl + _ = searches for html/xml closing tag
-Plugin 'godlygeek/csapprox'      " enable gVim colorschemes to work in terminal
-Plugin 'chrisbra/csv.vim'        " filetype plugin for csv
-Plugin 'kien/ctrlp.vim'          " fuzzy file, buffer, etc finder
-Plugin 'Raimondi/delimitMate'    " Add closing quotes, parens, + brackets
-Plugin 'davidhalter/jedi-vim'    " Python autocomplete
-Plugin 'tomasr/molokai'          " Molokai color scheme
-Plugin 'scrooloose/nerdtree'     " F2 to turn on (mapped below)
-Plugin 'powerline/powerline'     " use powerline fonts for airline
-Plugin 'scrooloose/syntastic'    " linting in any language
-Plugin 'bling/vim-airline'       " lean + mean status/tabline for vim
-Plugin 'tpope/vim-classpath'     " Sets path for JVM to current project
-Plugin 'guns/vim-clojure-static' " Necessary to use clojure repl in vim
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fireplace'     " REPL for Clojure
-Plugin 'nvie/vim-flake8'         " press F7 to run flake8 on a python file
-Plugin 'tpope/vim-fugitive'      " Git wrapper
 Plugin 'airblade/vim-gitgutter'  " shows a git diff in the gutter
-Plugin 'tpope/vim-leiningen'     " Static Vim support for Leiningen
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'       " lean + mean status/tabline for vim
+Plugin 'scrooloose/nerdtree'     " F2 to turn on (mapped below)
+Plugin 'scrooloose/syntastic'    " linting in any language
+Plugin 'chrisbra/csv.vim'        " filetype plugin for csv
+Plugin 'davidhalter/jedi-vim'    " Python autocomplete
+Plugin 'godlygeek/csapprox'      " enable gVim colorschemes to work in terminal
+Plugin 'powerline/powerline'     " use powerline fonts for airline
+Plugin 'tmux-plugins/vim-tmux'   " Multi screen!
+Plugin 'tpope/vim-fugitive'      " Git wrapper
 Plugin 'tpope/vim-surround'      " Help with brackets and the like
+Plugin 'vim-scripts/Vim-R-plugin'" R plugin for Vim
 Plugin 'VundleVim/Vundle.vim'    " Required! Vundle manages Vundle
 
 call vundle#end()                " Required!
@@ -100,6 +92,14 @@ set wildmenu			    " visual autocomplete for command menu
 
 set incsearch			    " search as characters are entered
 set hlsearch			    " highlight matches
+
+" -->R Settings
+" ////////////////////
+let maplocalleader = ","
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine
+let vimrplugin_applescript=0
+let vimrplugin_vsplit=1
 
 " -->KEY BINDINGS
 " ////////////////////

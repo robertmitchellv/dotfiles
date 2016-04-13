@@ -111,3 +111,5 @@ export PATH="/home/robertmitchellv/Apps/Anaconda3/bin:$PATH"
 
 # to fix the amount of colors the terminal can display
 export TERM=xterm-256color
+
+export R_LIBS="~/Code/R-libs"
