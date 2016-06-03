@@ -36,6 +36,7 @@ alias psu="sudo port selfupdate"
 alias puni="sudo port uninstall inactive"
 alias puo="sudo port upgrade outdated"
 alias pup="psu && puo"
+alias new-dataproject="cookiecutter https://github.com/drivendata/cookiecutter-data-science"
 
 # --> oh-my-zsh theme
 ZSH_THEME="agnoster"
