@@ -31,11 +31,11 @@ plugins=(docker git lein macports osx vim-interaction xcode)
 alias cd..='cd ..'
 alias c='clear'
 alias lsa='ls -al'
-alias pc="sudo port clean --all installed"
-alias psu="sudo port selfupdate"
-alias puni="sudo port uninstall inactive"
-alias puo="sudo port upgrade outdated"
-alias pup="psu && puo"
+alias clean="sudo port clean --all installed"
+alias selfupdate="sudo port selfupdate"
+alias inactive="sudo port uninstall inactive"
+alias outdated="sudo port upgrade outdated"
+alias update="selfupdate && outdated"
 alias new-dataproject="cookiecutter https://github.com/drivendata/cookiecutter-data-science"
 
 # --> oh-my-zsh theme
@@ -56,3 +56,6 @@ export LANG=en_US.UTF-8
 
 # --> Select directory to put r-packages
 export R_LIBS="~/Code/R-libs"
+
+# --> PostgreSQL
+export PG_CONFIG="/opt/local/lib/postgresql96/bin/pg_config"
