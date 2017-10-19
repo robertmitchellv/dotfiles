@@ -106,10 +106,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# added by Anaconda3 2.1.0 installer
-export PATH="/home/robertmitchellv/Apps/Anaconda3/bin:$PATH"
 
 # to fix the amount of colors the terminal can display
 export TERM=xterm-256color
 
+# code packages
 export R_LIBS="~/Code/R-libs"

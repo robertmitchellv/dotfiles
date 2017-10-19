@@ -8,22 +8,39 @@ export ZSH=/Users/robertmitchellv/.oh-my-zsh
 # PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
-# added by Anaconda3 2.4.0 installer
-export PATH="/Users/robertmitchellv/anaconda/bin:$PATH"
+# Add pip installed python packages to path
+# export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH"
+export PATH="/opt/local/bin/python:$PATH"
+
+# --> You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# --> Select directory to put r-packages
+export R_LIBS="~/Code/R-libs"
+
+# --> Set npm path
+export PATH=~/.npm-global/bin:$PATH
+
+# --> PostgreSQL
+export PG_CONFIG="/opt/local/lib/postgresql96/bin/pg_config"
 
 # --> BASICS
 # ////////////////////////////////////////
-setopt no_beep                  # don't beep on error
-setopt interactive_comments     # allow comments in interactive shell
+# dont beep on error
+setopt no_beep                  
+
+# allow comments in interactive shell
+setopt interactive_comments     
 
 # --> Directories
-setopt auto_cd                  # if type directory without 'cd' go there
+# if type directory without 'cd' go there
+setopt auto_cd                  
 
 # --> Completion
 setopt always_to_end
 
 # --> Plugins
-plugins=(docker git lein macports osx vim-interaction xcode)
+plugins=(docker git macports osx vim-interaction xcode)
 
 # --> KEYBINDINGS + ALIASES
 # ////////////////////////////////////////
@@ -36,7 +53,10 @@ alias selfupdate="sudo port selfupdate"
 alias inactive="sudo port uninstall inactive"
 alias outdated="sudo port upgrade outdated"
 alias update="selfupdate && outdated"
-alias new-dataproject="cookiecutter https://github.com/drivendata/cookiecutter-data-science"
+alias git="hub"
+alias clamscan-root="clamscan -r --bell -i /"
+alias clamscan-background="clamscan -r -i / &"
+alias clamscan-home="clamscan -r --bell -i ~/"
 
 # --> oh-my-zsh theme
 ZSH_THEME="agnoster"
@@ -51,11 +71,3 @@ INTERACTIVECOMMENTS="true"
 # --> Configuration
 source $ZSH/oh-my-zsh.sh
 
-# --> You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# --> Select directory to put r-packages
-export R_LIBS="~/Code/R-libs"
-
-# --> PostgreSQL
-export PG_CONFIG="/opt/local/lib/postgresql96/bin/pg_config"
