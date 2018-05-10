@@ -9,6 +9,10 @@ options(stringsAsFactors = FALSE)
 options(editor = "vim")
 options(prompt = "--> ")
 options(continue = "···  ")
+options(shiny.reactlog=TRUE)
+
+# timezone
+Sys.setenv(TZ="America/Los_Angeles")
 
 ## --> functions
 q <- function (save = "no", ...) {
