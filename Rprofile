@@ -1,20 +1,16 @@
-# My r-profile settings
+# --> My r-profile settings
 
-# tell R where to find my packages
-.libPaths(c("~/Code/R-libs", .libPaths() ) )
+## --> tell R where to find my packages
+.libPaths(c("~/code/bin/R/packages", .libPaths() ) )
 
-# options
+## --> options
+options(repos = c(CRAN = "http://cran.rstudio.com"))
 options(stringsAsFactors = FALSE)
-
 options(editor = "vim")
-
 options(prompt = "--> ")
 options(continue = "···  ")
 
-# enforce margin
-# options(width = 80)
-
+## --> functions
 q <- function (save = "no", ...) {
   quit(save = save, ...)
 }
-
