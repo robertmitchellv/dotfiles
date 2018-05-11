@@ -6,7 +6,7 @@ This is my simple new Mac setup repo
 
 ```{bash}
 cd ~/
-git clone
+git clone https://github.com/robertmitchellv/dotfiles.git
 ```
 
 ### 2. Create directories
