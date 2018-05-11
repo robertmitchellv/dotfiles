@@ -4,7 +4,7 @@ This is my simple new Mac setup repo
 
 ### 1. Clone the repo
 
-```
+```{bash}
 cd ~/
 git clone
 ```
@@ -13,7 +13,7 @@ git clone
 
 The `create-structure.sh` script creates the directories I want to start using as a way to better organize my files.
 
-```
+```{bash}
 cd ~/dotfiles/
 chmod +x create-structure.sh
 ./create-structure.sh
@@ -27,7 +27,7 @@ You may also be prompted to agree to the cli tool terms, which is another option
 
 Also, you can do this manually:
 
-```
+```{bash}
 xcode-select --install
 ```
 
@@ -35,13 +35,13 @@ xcode-select --install
 
 Install `homebrew` (check the [site](https://brew.sh/) to be sure the command below is correct, do _not_ blindly copy/paste into the terminal)
 
-```
+```{bash}
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Next update `homebrew`
 
-```
+```{bash}
 brew update && brew upgrade
 ```
 
@@ -54,7 +54,7 @@ The `Brewfile` contains the `homebrew` installs that seem best for my workflow a
 
 To run:
 
-```
+```{bash}
 cd ~/dotfiles/
 brew bundle
 ```
@@ -63,7 +63,31 @@ brew bundle
 
 Very minimal, it points to where I want to keep my R packages mostly
 
-```
+```{bash}
 cd ~/dotfiles/
 ln -s Rprofile ~/.Rprofile
 ```
+
+### 6. R Packages
+
+Open up R and install the packages:
+
+```{bash}
+cd ~/dotfiles/
+R
+```
+
+Then in the R console enter:
+
+```{r}
+source("Packages.R")
+install.packages(packages)
+```
+
+There are some additional packages that need to be installed with:
+
+```{r}
+remotes::install_github("username/package")
+```
+
+
