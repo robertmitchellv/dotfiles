@@ -10,6 +10,8 @@ options(editor = "vim")
 options(prompt = "--> ")
 options(continue = "···  ")
 options(shiny.reactlog=TRUE)
+options(crayon.enabled = TRUE)
+options(crayon.colors = 256)
 
 # timezone
 Sys.setenv(TZ="America/Los_Angeles")
