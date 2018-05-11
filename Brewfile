@@ -83,6 +83,7 @@ cask "anaconda", args: { appdir: "~/code/bin/python/"}
 cask "firefox"
 cask "font-dejavu-sans"
 cask "font-dejavu-sans-mono-for-powerline"
+cask "font-fira-code"
 cask "font-fira-mono"
 cask "font-fira-mono-for-powerline"
 cask "font-fontawesome"

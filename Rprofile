@@ -4,7 +4,7 @@
 .libPaths(c("~/code/bin/R/packages", .libPaths() ) )
 
 ## --> options
-options(repos = c(CRAN = "http://cran.rstudio.com"))
+options(repos = c(CRAN = "https://cran.rstudio.com"))
 options(stringsAsFactors = FALSE)
 options(editor = "vim")
 options(prompt = "--> ")
