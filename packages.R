@@ -5,7 +5,7 @@ packages <- c(
  "caret", "cellranger", "cli", "clipr", "clisymbols", "cloudml",
  "coda", "colorspace", "crayon", "crosstalk", "curl", "data.table",
  "DBI", "DBItest", "dbplot", "dbplyr", "debugme", "desc", "devtools", "DiagrammeR",
- "dichromat", "digest", "downloader", "dplyr", "elastic",
+ "dichromat", "digest", "downloader", "dplyr", "elastic", "emo",
  "evaluate", "extrafont", "extrafontdb", "fontBitstreamVera",
  "fontLiberation", "fontquiver", "forcats", "feather",
  "flexdashboard", "fulltext", "gam", "geojson", "geojsonio",
