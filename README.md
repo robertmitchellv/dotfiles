@@ -90,4 +90,28 @@ There are some additional packages that need to be installed with:
 remotes::install_github("username/package")
 ```
 
+### 7. .(zsh/vim)rc
+
+Create a symlink for these files by doing the following:
+
+```{bash}
+cd ~/
+ln -s dotfiles/zshrc .zshrc
+ln -s dotfiles/vimrc .vimrc
+```
+
+For `vim` you have to make an _extra_ step by installing the vundles (vim
+bundles)
+
+```{vim}
+vim
+:PluginInstall
+```
+
+When it's finished, it's a simple
+
+```{vim}
+:q!
+:q!
+```
 

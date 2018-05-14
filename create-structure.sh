@@ -73,3 +73,6 @@ mkdir personal tv-movie
 echo "export LC_ALL=en_US.UTF-8" >> ~/.bash_profile
 echo "export LANG=en_US.UTF-8" >> ~/.bash_profile
 echo "export PATH=/usr/local/bin:$PATH" >> ~/.bash_profile && source ~/.bash_profile
+
+# --> clone vundle for vim bundles
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
