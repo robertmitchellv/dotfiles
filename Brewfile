@@ -16,6 +16,7 @@ tap "caskroom/cask"
 tap "caskroom/fonts"
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "caskroom/versions"
 
 # --> brews
 brew "coreutils"
@@ -89,6 +90,7 @@ cask "font-fira-code"
 cask "font-fira-mono"
 cask "font-fira-mono-for-powerline"
 cask "font-fontawesome"
+cask "font-ibm-plex"
 cask "font-inconsolata"
 cask "font-inconsolata-for-powerline"
 cask "font-lato"
@@ -100,8 +102,8 @@ cask "font-roboto"
 cask "iterm2"
 cask "java"
 cask "mactex"
-cask "rstudio"
-cask "sourcetree"
+cask "rstudio-preview"
+cask "gitkraken"
 
 # --> mas (Apple App Store)
 mas "Alfred", id: 405843582

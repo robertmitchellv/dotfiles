@@ -17,7 +17,7 @@ packages <- c(
  "leaflet", "lme4", "lubridate", "magick", "magrittr", "maps",
  "maptools", "markdown", "memoise", "mime", "miniUI", "mgcv",
  "mlbench", "mnormt", "modelr", "munsell", "nlme", "odbc", "openssl",
- "openxlsx", "osmdata", "parsnip", "pdftools", "pillar",
+ "openxlsx", "osmdata", "parsnip", "patchwork", "pdftools", "pillar",
  "plogr", "plotly", "plumber", "plyr", "png", "pool", "praise",
  "printr", "profvis", "promises", "psych", "purrr", "R6",
  "randomForest", "ranger", "raster", "rcmdcheck", "RColorBrewer",
