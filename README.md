@@ -2,24 +2,7 @@
 
 This is my simple new Mac setup repo
 
-### 1. Clone the repo
-
-```{bash}
-cd ~/
-git clone https://github.com/robertmitchellv/dotfiles.git
-```
-
-### 2. Create directories
-
-The `create-structure.sh` script creates the directories I want to start using as a way to better organize my files.
-
-```{bash}
-cd ~/dotfiles/
-chmod +x create-structure.sh
-./create-structure.sh
-```
-
-### 3. X-Code cli tools
+### 1. X-Code cli tools
 
 Make sure you have the X-Code cli tools installed; check by launching the terminal and typing `gcc`--if no cli tools exist, the system will prompt you to install.
 
@@ -29,6 +12,23 @@ Also, you can do this manually:
 
 ```{bash}
 xcode-select --install
+```
+
+### 2. Clone the repo
+
+```{bash}
+cd ~/
+git clone https://github.com/robertmitchellv/dotfiles.git
+```
+
+### 3. Create directories
+
+The `create-structure.sh` script creates the directories I want to start using as a way to better organize my files.
+
+```{bash}
+cd ~/dotfiles/
+chmod +x create-structure.sh
+./create-structure.sh
 ```
 
 ### 4. Homebrew
@@ -59,38 +59,22 @@ cd ~/dotfiles/
 brew bundle
 ```
 
-### 5. Rprofile
+### 5. Install oh-my-zsh
 
-Very minimal, it points to where I want to keep my R packages mostly
-
-```{bash}
-cd ~/dotfiles/
-ln -s Rprofile ~/.Rprofile
-```
-
-### 6. R Packages
-
-Open up R and install the packages:
+Via `curl`
 
 ```{bash}
-cd ~/dotfiles/
-R
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-Then in the R console enter:
+### 6. .(zsh/vim)rc
 
-```{r}
-source("Packages.R")
-install.packages(packages)
+Before creating a symlink, you may have to remove the stock `.zshrc` that was
+just installed.
+
+```{bash}
+mv .zshrc .zshrc.bak
 ```
-
-There are some additional packages that need to be installed with:
-
-```{r}
-remotes::install_github("username/package")
-```
-
-### 7. .(zsh/vim)rc
 
 Create a symlink for these files by doing the following:
 
@@ -98,6 +82,18 @@ Create a symlink for these files by doing the following:
 cd ~/
 ln -s dotfiles/zshrc .zshrc
 ln -s dotfiles/vimrc .vimrc
+```
+
+Source the `.zshrc` to refresh shell
+
+```{bash}
+source ~/.zshrc
+```
+
+Now you can remove old `.zshrc.bak`
+
+```{bash}
+rm .zshrc.bak
 ```
 
 For `vim` you have to make an _extra_ step by installing the vundles (vim
@@ -114,4 +110,54 @@ When it's finished, it's a simple
 :q!
 :q!
 ```
+
+### 7. Rprofile
+
+Very minimal, it points to where I want to keep my R packages mostly
+
+```{bash}
+cd ~/dotfiles/
+ln -s Rprofile ~/.Rprofile
+```
+
+### 8. R Packages
+
+Open up R and install the packages:
+
+```{bash}
+cd ~/dotfiles/
+R
+```
+
+Then in the R console enter:
+
+```{r}
+source("Packages.R")
+install.packages(packages)
+```
+
+There are some packages that may not install correctly due to flags not being
+set or incompatability with the version of R you're using. Check dependancies
+on CRAN and ensure the right software is also installed with `homebrew`. In some of those cases you can install from Github like so: 
+
+```{r}
+remotes::install_github("username/package")
+```
+### 9. GitHub Credentials
+
+So you don't have to enter these all the time, set up credentials now:
+
+```{bash}
+git config --global user.name "robertmitchellv"
+git config --global user.email "robert.beaty.mitchell@gmail.com"
+git config --global credential.helper osxkeychain
+```
+
+Check that everything is stored correctly
+
+```{bash}
+cat ~/.gitconfig
+```
+
+
 

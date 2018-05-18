@@ -44,7 +44,6 @@ brew "autoconf"
 brew "automake"
 brew "openssl"
 brew "libressl"
-brew "libmysqlclient"
 brew "libssh2"
 brew "libxml2"
 brew "pandoc"
@@ -79,11 +78,11 @@ brew "cowsay"
 brew "figlet"
 brew "toilet"
 
-
 # --> casks
 cask "xquartz"
 cask "atom"
 cask "anaconda", args: { appdir: "~/code/bin/python/"}
+cask "brave"
 cask "firefox"
 cask "font-dejavu-sans"
 cask "font-dejavu-sans-mono-for-powerline"

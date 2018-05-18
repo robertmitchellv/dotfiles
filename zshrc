@@ -52,6 +52,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # functions
 #
+
 clam(){clamscan -r --bell -i $1}
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -62,12 +63,14 @@ prompt_context() {
 #
 # path variables
 #
+
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/opt/v8@3.15/bin:$PATH"    
 
 #
 # compilation flags
 #
+
 export ARCHFLAGS="-arch x86_64"
 export LDFLAGS="-L/usr/local/opt/libpq/lib"
 export CPPFLAGS="-I/usr/local/opt/libpq/include"
@@ -84,6 +87,7 @@ export EDITOR='vim'
 
 alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimrc="vim ~/.vimrc"
 alias cd..="cd ../"
 alias c="clear"
 alias update="brew update && brew upgrade && brew cleanup && brew cask cleanup && brew cask upgrade && brew cask cleanup"
