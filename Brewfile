@@ -103,7 +103,7 @@ cask "font-roboto"
 cask "iterm2"
 cask "java"
 cask "mactex"
-cask "rstudio-preview"
+cask "rstudio-daily"
 cask "gitkraken"
 
 # --> mas (Apple App Store)
