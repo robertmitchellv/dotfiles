@@ -12,10 +12,11 @@
 cask_args appdir: "/Applications"
 
 # --> taps
-tap "caskroom/cask"
-tap "caskroom/fonts"
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "homebrew/cask-versions"
+tap "caskroom/cask"
+tap "caskroom/fonts"
 tap "caskroom/versions"
 
 # --> brews
@@ -67,6 +68,7 @@ brew "freetds", args: ["with-unixodbc"]
 brew "psqlodbc"
 brew "mysql"
 brew "sqliteodbc"
+brew "csvkit"
 brew "udunits"
 brew "aspell"
 brew "hunspell"
@@ -81,10 +83,11 @@ brew "toilet"
 
 # --> casks
 cask "xquartz"
-cask "atom"
+cask "atom-beta"
 cask "anaconda", args: { appdir: "~/code/bin/python/"}
-cask "brave"
-cask "firefox"
+cask "dropbox-beta"
+cask "electron-beta"
+cask "firefox-nightly"
 cask "font-dejavu-sans"
 cask "font-dejavu-sans-mono-for-powerline"
 cask "font-fira-code"
@@ -100,15 +103,18 @@ cask "font-roboto-mono"
 cask "font-roboto-mono-for-powerline"
 cask "font-roboto-slab"
 cask "font-roboto"
-cask "iterm2"
+cask "gitkraken"
+cask "iterm2-beta"
 cask "java"
 cask "mactex"
 cask "rstudio-daily"
-cask "gitkraken"
+cask "slack-beta"
+cask "visual-studio-code-insiders"
+cask "vlc-nightly"
+
 
 # --> mas (Apple App Store)
 mas "Alfred", id: 405843582
 mas "Bitwarden", id: 1352778147
-mas "Slack", id: 803453959
 mas "TickTick: Things & Tasks To Do", id: 966085870
 mas "Tweetbot For Twitter", id: 557168941
