@@ -59,6 +59,7 @@ prompt_context() {
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+rows(){wc -l $1}
 
 #
 # path variables
@@ -66,6 +67,9 @@ prompt_context() {
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/opt/v8@3.15/bin:$PATH"    
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 #
 # compilation flags
@@ -80,6 +84,9 @@ export LANG="en_US.UTF-8"
 export LDFLAGS="-L/usr/local/opt/v8@3.15/lib"
 export CPPFLAGS="-I/usr/local/opt/v8@3.15/include"
 export EDITOR='vim'
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
 
 #
 # personal aliases 
@@ -92,5 +99,4 @@ alias cd..="cd ../"
 alias c="clear"
 alias update="brew update && brew upgrade && brew cleanup && brew cask cleanup && brew cask upgrade && brew cask cleanup"
 alias git="hub"
-
 

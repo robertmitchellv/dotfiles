@@ -35,6 +35,7 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tpope/vim-fugitive'
@@ -66,7 +67,7 @@ filetype plugin indent on    " required
 " colors
 "
 
-colorscheme solarized
+colorscheme dracula 
 
 "
 " syntax
@@ -101,9 +102,10 @@ set wildmenu
 " lets
 "
  
-" let g:airline_powerline_fongs = 1 
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
+let g:airline_powerline_fonts = 1 
+let g:dracula_italic=1
+let g:dracula_termtrans=1
+let g:dracula_termcolors=256
 
 "
 " maps 
