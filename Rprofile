@@ -13,7 +13,7 @@ options(shiny.reactlog=TRUE)
 options(crayon.enabled = TRUE)
 options(crayon.colors = 256)
 
-# timezone
+## --> timezone
 Sys.setenv(TZ="America/Los_Angeles")
 
 ## --> functions
