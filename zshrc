@@ -70,6 +70,7 @@ export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/gdal2/bin:$PATH"
 
 #
 # compilation flags
@@ -87,6 +88,12 @@ export EDITOR='vim'
 export LDFLAGS="-L/usr/local/opt/icu4c/lib"
 export CPPFLAGS="-I/usr/local/opt/icu4c/include"
 export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
+export LDFLAGS="-L/usr/local/opt/gdal2/lib"
+export CPPFLAGS="-I/usr/local/opt/gdal2/include"
+export PKG_CONFIG_PATH="/usr/local/opt/gdal2/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/libkml-dev/lib"
+export CPPFLAGS="-I/usr/local/opt/libkml-dev/include"
 
 #
 # personal aliases 
