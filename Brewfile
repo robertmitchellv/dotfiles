@@ -80,6 +80,7 @@ brew "youtube-dl"
 brew "cowsay"
 brew "figlet"
 brew "toilet"
+brew "watch"
 
 # --> casks
 cask "xquartz"
