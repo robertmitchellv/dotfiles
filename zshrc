@@ -61,6 +61,10 @@ prompt_context() {
 }
 rows(){wc -l $1}
 
+installed() {brew list | grep -i "$1"}
+bin-local() {lsa /usr/local/bin | grep -i "$1"}
+font-installed() {printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}' | grep -i "$1"}
+
 #
 # path variables
 #
@@ -106,4 +110,5 @@ alias cd..="cd ../"
 alias c="clear"
 alias update="brew update && brew upgrade && brew cleanup && brew cask cleanup && brew cask upgrade && brew cask cleanup"
 alias git="hub"
+alias fonts="printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}'"
 
