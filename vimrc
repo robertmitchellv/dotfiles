@@ -107,8 +107,8 @@ set wildmenu
  
 let g:airline_powerline_fonts = 1 
 " let ayucolor="light"  " for light version of theme
-" let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
+let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
 " let g:dracula_italic=1
 " let g:dracula_termtrans=1
 " let g:dracula_termcolors=256
@@ -118,6 +118,8 @@ let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
 " }}
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_r_checkers = ['lintr']
 
 "
 " maps 

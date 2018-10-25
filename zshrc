@@ -50,6 +50,15 @@ source $ZSH/oh-my-zsh.sh
 #
 
 #
+# compilier aliases
+#
+alias gcc="gcc-8"
+alias gcov="gcov-8"
+alias g++="g++-8"
+alias cpp="cpp-8"
+alias c++="c++-8"
+
+#
 # functions
 #
 
@@ -59,9 +68,18 @@ prompt_context() {
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
 rows(){wc -l $1}
 
-installed() {brew list | grep -i "$1"}
+installed() {
+  brew list | grep -i "$1"
+  brew cask list | grep -i "$1"
+}
+
+r-installed() {
+  lsa ~/code/bin/R/packages | grep -i "$1"
+}
+
 bin-local() {lsa /usr/local/bin | grep -i "$1"}
 font-installed() {printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}' | grep -i "$1"}
 
@@ -69,35 +87,54 @@ font-installed() {printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{p
 # path variables
 #
 
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-export PATH="/usr/local/opt/v8@3.15/bin:$PATH"    
-export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/gdal2/bin:$PATH"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/v8@3.15/bin:$PATH"    
+export PATH="/usr/local/opt/ccache/libexec:$PATH"
+export PATH="/usr/local/opt/nss/bin:$PATH"
 
 #
 # compilation flags
 #
 
+# arch
 export ARCHFLAGS="-arch x86_64"
+
+# ld
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export LDFLAGS="-L/usr/local/opt/gdal2/lib"
+export LDFLAGS="-L/usr/local/opt/libkml-dev/lib"
 export LDFLAGS="-L/usr/local/opt/libpq/lib"
+export LDFLAGS="-L/usr/local/opt/openblas/lib"
+export LDFLAGS="-L/usr/local/opt/v8@3.15/lib"
+export LDFLAGS="-L/usr/local/opt/nss/lib"
+  
+# cpp
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+export CPPFLAGS="-I/usr/local/opt/gdal2/include"
+export CPPFLAGS="-I/usr/local/opt/libkml-dev/include"
 export CPPFLAGS="-I/usr/local/opt/libpq/include"
+export CPPFLAGS="-I/usr/local/opt/openblas/include"
+export CPPFLAGS="-I/usr/local/opt/v8@3.15/include"
+export CPPFLAGS="-I/usr/local/opt/nss/include"
+
+# pkg_config
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/gdal2/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/libpq/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/nss/lib/pkgconfig"
+
+# gdal
+export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
+
+# other 
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-export LDFLAGS="-L/usr/local/opt/v8@3.15/lib"
-export CPPFLAGS="-I/usr/local/opt/v8@3.15/include"
 export EDITOR='vim'
-export LDFLAGS="-L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include"
-export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
-export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
-export LDFLAGS="-L/usr/local/opt/gdal2/lib"
-export CPPFLAGS="-I/usr/local/opt/gdal2/include"
-export PKG_CONFIG_PATH="/usr/local/opt/gdal2/lib/pkgconfig"
-export LDFLAGS="-L/usr/local/opt/libkml-dev/lib"
-export CPPFLAGS="-I/usr/local/opt/libkml-dev/include"
 
 #
 # personal aliases 
@@ -106,9 +143,22 @@ export CPPFLAGS="-I/usr/local/opt/libkml-dev/include"
 alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vimrc="vim ~/.vimrc"
+alias pip="pip3"
+alias refresh="source ~/.zshrc"
 alias cd..="cd ../"
 alias c="clear"
-alias update="brew update && brew upgrade && brew cleanup && brew cask cleanup && brew cask upgrade && brew cask cleanup"
+alias update="brew update && brew upgrade && brew cleanup && brew cask upgrade"
 alias git="hub"
 alias fonts="printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}'"
+alias dock='eval "$(docker-machine env default)"'
+alias kali="docker run -t -i kalilinux/kali-linux-docker /bin/bash"
+alias plumber="docker run --rm -p 8000:8000 trestletech/plumber"
+alias hslynk-connect="sudo openvpn ~/.openvpn/hslynk.ovpn"
+alias python="python3"
+alias iR="rtichoke"
+
+#
+# variables
+#
+BAT_THEME="zenburn"
 
