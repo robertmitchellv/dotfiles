@@ -112,7 +112,8 @@ export LDFLAGS="-L/usr/local/opt/openblas/lib"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export LDFLAGS="-L/usr/local/opt/v8@3.15/lib"
 export LDFLAGS="-L/usr/local/opt/nss/lib"
-  
+export LDFLAGS="-L/usr/local/opt/libomp/lib"
+
 # cpp
 export CPPFLAGS="-I/usr/local/opt/icu4c/include"
 export CPPFLAGS="-I/usr/local/opt/gdal2/include"
@@ -122,6 +123,7 @@ export CPPFLAGS="-I/usr/local/opt/openblas/include"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export CPPFLAGS="-I/usr/local/opt/v8@3.15/include"
 export CPPFLAGS="-I/usr/local/opt/nss/include"
+export CPPFLAGS="-I/usr/local/opt/libomp/include"
 
 # pkg_config
 export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"

@@ -12,8 +12,8 @@ options(
   editor = "vim",
   
   # I like the prompt to look this way
-  prompt = "--> ",
-  continue = "···  ",
+  prompt = " ==> ",
+  continue = " ···  ",
   
   # for the awesome shiny tool
   shiny.reactlog=TRUE,
@@ -57,7 +57,7 @@ options(
 
   # custom prompt for different modes
   rtichoke.prompt = "\033[0;34mR--> \033[0m ",
-  rtichoke.shell_prompt = "\033[0;31m#!--> \033[0m ",
+  rtichoke.shell_prompt = "\033[0;31m#! ==> \033[0m ",
   rtichoke.browse_prompt = "\033[0;33mBrowse[{}]>\033[0m ",
 
   # supress the loading message for reticulate
