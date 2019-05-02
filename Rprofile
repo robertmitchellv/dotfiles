@@ -12,7 +12,7 @@ options(
   editor = "vim",
   
   # I like the prompt to look this way
-  prompt = " ==> ",
+  prompt = "💻📈📊 → ",
   continue = " ···  ",
   
   # for the awesome shiny tool
@@ -56,7 +56,7 @@ options(
   rtichoke.history_search_no_duplicates = FALSE,
 
   # custom prompt for different modes
-  rtichoke.prompt = "\033[0;34mR--> \033[0m ",
+  rtichoke.prompt = "\033[0;34m R ==> \033[0m ",
   rtichoke.shell_prompt = "\033[0;31m#! ==> \033[0m ",
   rtichoke.browse_prompt = "\033[0;33mBrowse[{}]>\033[0m ",
 

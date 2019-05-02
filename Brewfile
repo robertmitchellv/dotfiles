@@ -83,6 +83,8 @@ brew "cowsay"
 brew "figlet"
 brew "toilet"
 brew "watch"
+brew "carthage"
+brew "rbenv"
 
 # --> casks
 cask "phantomjs"
@@ -115,7 +117,7 @@ cask "rstudio-daily"
 cask "slack-beta"
 cask "visual-studio-code-insiders"
 cask "vlc-nightly"
-
+cask "fastlane"
 
 # --> mas (Apple App Store)
 mas "Alfred", id: 405843582

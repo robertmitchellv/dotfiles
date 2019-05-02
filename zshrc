@@ -83,6 +83,23 @@ r-installed() {
 bin-local() {lsa /usr/local/bin | grep -i "$1"}
 font-installed() {printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}' | grep -i "$1"}
 
+source '/usr/local/Cellar/rbenv/1.1.1/libexec/../completions/rbenv.zsh'
+command rbenv rehash 2>/dev/null
+rbenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(rbenv "sh-$command" "$@")";;
+  *)
+    command rbenv "$command" "$@";;
+  esac
+}
+
 #
 # path variables
 #
@@ -95,6 +112,9 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/v8@3.15/bin:$PATH"    
 export PATH="/usr/local/opt/ccache/libexec:$PATH"
 export PATH="/usr/local/opt/nss/bin:$PATH"
+export PATH="$HOME/.fastlane/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:${PATH}"
+export PATH="$PATH:$HOME/.rvm/bin"
 
 #
 # compilation flags
@@ -140,6 +160,7 @@ export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export EDITOR='vim'
+export RBENV_SHELL=zsh
 
 #
 # personal aliases 
@@ -158,9 +179,14 @@ alias fonts="printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print 
 alias dock='eval "$(docker-machine env default)"'
 alias kali="docker run -t -i kalilinux/kali-linux-docker /bin/bash"
 alias plumber="docker run --rm -p 8000:8000 trestletech/plumber"
-alias hslynk-connect="sudo openvpn ~/.openvpn/hslynk.ovpn"
 alias python="python3"
 alias iR="rtichoke"
+alias carthage-cache="rm -rf ~/Library/Caches/org.carthage.CarthageKit"
+
+#
+# eval
+#
+eval "$(rbenv init -)"
 
 #
 # variables

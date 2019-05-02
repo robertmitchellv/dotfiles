@@ -159,5 +159,9 @@ Check that everything is stored correctly
 cat ~/.gitconfig
 ```
 
+### 10. Use the `ayumirage.rstheme` file for the `ayu` colorscheme in RStudio
+
+Have fun!
+
 
 
