@@ -83,23 +83,6 @@ r-installed() {
 bin-local() {lsa /usr/local/bin | grep -i "$1"}
 font-installed() {printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}' | grep -i "$1"}
 
-source '/usr/local/Cellar/rbenv/1.1.1/libexec/../completions/rbenv.zsh'
-command rbenv rehash 2>/dev/null
-rbenv() {
-  local command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell)
-    eval "$(rbenv "sh-$command" "$@")";;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
-
 #
 # path variables
 #
@@ -112,9 +95,9 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/v8@3.15/bin:$PATH"    
 export PATH="/usr/local/opt/ccache/libexec:$PATH"
 export PATH="/usr/local/opt/nss/bin:$PATH"
-export PATH="$HOME/.fastlane/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:${PATH}"
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$HOME/.fastlane/bin:$PATH"
+# export PATH="$HOME/.rbenv/shims:${PATH}"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 #
 # compilation flags
@@ -133,6 +116,7 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export LDFLAGS="-L/usr/local/opt/v8@3.15/lib"
 export LDFLAGS="-L/usr/local/opt/nss/lib"
 export LDFLAGS="-L/usr/local/opt/libomp/lib"
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 
 # cpp
 export CPPFLAGS="-I/usr/local/opt/icu4c/include"
@@ -144,6 +128,7 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export CPPFLAGS="-I/usr/local/opt/v8@3.15/include"
 export CPPFLAGS="-I/usr/local/opt/nss/include"
 export CPPFLAGS="-I/usr/local/opt/libomp/include"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 
 # pkg_config
 export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
@@ -152,6 +137,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/libpq/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/nss/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
 # gdal
 export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
