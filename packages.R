@@ -29,7 +29,7 @@ packages <- c(
  "roxygen2", "rpart", "RPostgres", "rprojroot", "rsample",
  "rsconnect", "RSQLite", "rstan", "rstanarm", "rstudioapi", "Rttf2pt1",
  "rvest", "scales", "selectr", "sessioninfo", "sf", "shiny",
- "shinydashboard", "shinyjs", "shinytest", "snakecase",
+ "shinydashboard", "shinyjs", "shinytest", "snakecase", "slider",
  "sourcetools", "sp", "sparklyr", "stringi", "stringr", "survival",
  "sweep", "tensorflow", "testthat", "tibble", "tibbletime",
  "tidyr", "tidypredict", "tidyquant", "tidyselect", "tidytext", "tidyverse", 

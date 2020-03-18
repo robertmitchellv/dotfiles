@@ -219,7 +219,6 @@ alias dock='eval "$(docker-machine env default)"'
 alias kali="docker run -t -i kalilinux/kali-linux-docker /bin/bash"
 alias plumber="docker run --rm -p 8000:8000 trestletech/plumber"
 alias python="python3"
-alias iR="rtichoke"
 alias carthage-cache="rm -rf ~/Library/Caches/org.carthage.CarthageKit"
 alias sas-vm="VBoxHeadless -s sas-university"
 alias R="radian"
