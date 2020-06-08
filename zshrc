@@ -99,12 +99,12 @@ yt-mp3() {
 
 # resize an emote for discord
 emote() {
-  convert "$1" -resize 75 -set filename:original %t '%[filename:original].png'
+  convert "$1" -resize 240 -set filename:original %t '%[filename:original].png'
 }
 
 # resize a gif for discord
 gif() {
-  convert "$1" -resize 75 -set filename:original %t '%[filename:original].gif'
+  convert "$1" -resize 80 -set filename:original %t '%[filename:original].gif'
 }
 
 # resize a png to make it smol

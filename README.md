@@ -132,7 +132,7 @@ R
 Then in the R console enter:
 
 ```{r}
-source("Packages.R")
+packages <- readLines("packages.txt")
 install.packages(packages)
 ```
 
@@ -162,6 +162,5 @@ cat ~/.gitconfig
 ### 10. Use the `ayumirage.rstheme` file for the `ayu` colorscheme in RStudio
 
 Have fun!
-
 
 
