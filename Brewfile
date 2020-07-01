@@ -12,13 +12,12 @@
 cask_args appdir: "/Applications"
 
 # --> taps
-tap "caskroom/cask"
-tap "caskroom/fonts"
-tap "caskroom/versions"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "microsoft/mssql-release"
 
 # --> first cask
@@ -87,6 +86,7 @@ brew "psqlodbc"
 brew "ruby-build"
 brew "rbenv"
 brew "sqliteodbc"
+brew "svn"
 brew "tcl-tk"
 brew "tmux"
 brew "toilet"

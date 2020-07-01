@@ -43,6 +43,9 @@ plugins=(
   git
 )
 
+# to correct a ZSH completion issue
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 
 # 
