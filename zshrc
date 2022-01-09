@@ -81,7 +81,6 @@ rows(){wc -l $1}
 # did I brew this already?
 installed() {
   brew list | grep -i "$1"
-  brew cask list | grep -i "$1"
 }
 
 # is an r package installed?
@@ -100,6 +99,10 @@ yt-mp3() {
   youtube-dl --extract-audio --audio-format mp3 "$1"
 }
 
+yt-text() {
+  youtube-dl --write-sub --sub-lang en --skip-download "$1"
+}
+
 # resize an emote for discord
 emote() {
   convert "$1" -resize 240 -set filename:original %t '%[filename:original].png'
@@ -110,9 +113,17 @@ gif() {
   convert "$1" -resize 80 -set filename:original %t '%[filename:original].gif'
 }
 
+mov-to-gif() {
+  ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$2" 
+}
+
 # resize a png to make it smol
 smolpng() {
   convert "$1" -resize 150 -set filename:original %t '%[filename:original].png'
+}
+
+heic-jpeg() {
+  for file in $1/*.heic ; do mv "$file" "${file%.*}.jpeg" ; done
 }
 
 # when calling brew, remove anaconda from path and then restore after command
@@ -132,6 +143,7 @@ brew () {
 
 # export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/anaconda3/bin:$SANS_ANACONDA"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
@@ -208,15 +220,15 @@ export EDITOR='vim'
 alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vimrc="vim ~/.vimrc"
-alias update="echo -e '\e[1;31mbrew update\e[0m' && brew update && \
-  echo -e '\e[1;31mbrew upgrade\e[0m' && brew upgrade && \
-  echo -e '\e[1;31mbrew cleanup\e[0m' && brew cleanup && \
-  echo -e '\e[1;31mbrew cask upgrade\e[0m' && brew cask upgrade"
+alias update="toilet -f smblock --gay 'brew update' && brew update && \
+  toilet -f smblock --gay 'brew upgrade' && brew upgrade && \
+  toilet -f smblock --gay 'brew cleanup' && brew cleanup && \
+  toilet -f smblock --gay 'brew upgrade --cask' && brew upgrade --cask"
 alias pip="pip3"
 alias refresh="source ~/.zshrc"
 alias cd..="cd ../"
 alias c="clear"
-alias git="hub"
+# alias git="hub"
 alias fonts="printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}'"
 alias dock='eval "$(docker-machine env default)"'
 alias kali="docker run -t -i kalilinux/kali-linux-docker /bin/bash"
@@ -225,6 +237,7 @@ alias python="python3"
 alias carthage-cache="rm -rf ~/Library/Caches/org.carthage.CarthageKit"
 alias sas-vm="VBoxHeadless -s sas-university"
 alias R="radian"
+alias unzip-all="for z in *.zip; do unzip $z; done"
 
 #
 # variables

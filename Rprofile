@@ -68,7 +68,10 @@ options(
 )
 
 ## --> timezone
-Sys.setenv(TZ="America/Los_Angeles")
+Sys.setenv(
+  TZ="America/Los_Angeles",
+  R_MAX_V_SIZE="250Gb"
+)
 
 ## --> functions
 q <- function (save = "no", ...) {
