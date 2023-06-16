@@ -12,7 +12,7 @@ echo " HOME sweet HOME "
 
 # ==> antidote
 #     --> https://github.com/mattmc3/antidote
-      source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+      source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
 #     --> initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
       antidote load
@@ -45,21 +45,21 @@ echo " HOME sweet HOME "
 
 #     --> conda
 #     |> start
-      __conda_setup="$('/Users/rbmv/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+      __conda_setup="$('/opt/homebrew/Caskroom/mambaforge/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
       if [ $? -eq 0 ]; then
           eval "$__conda_setup"
       else
-          if [ -f "/Users/rbmv/mambaforge/etc/profile.d/conda.sh" ]; then
-              . "/Users/rbmv/mambaforge/etc/profile.d/conda.sh"
+          if [ -f "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh" ]; then
+              . "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/conda.sh"
           else
-              export PATH="/Users/rbmv/mambaforge/bin:$PATH"
+              export PATH="/opt/homebrew/Caskroom/mambaforge/base/bin:$PATH"
           fi
       fi
       unset __conda_setup
 
-      if [ -f "/Users/rbmv/mambaforge/etc/profile.d/mamba.sh" ]; then
-          . "/Users/rbmv/mambaforge/etc/profile.d/mamba.sh"
-      fi
+      if [ -f "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/mamba.sh" ]; then
+          . "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/mamba.sh"
+      fi     
 #     |> end
 
 # ==> programming langs 
@@ -67,7 +67,7 @@ echo " HOME sweet HOME "
       source "$HOME/.cargo/env"
 
 #     --> java
-      export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk17/Contents/Home
+#      export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk17/Contents/Home
 
 # </> blast off starship
 #     --> remember to use custom starship.toml
