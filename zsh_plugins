@@ -1,0 +1,13 @@
+# </> .zsh_plugins for antidote
+
+#     --> completions
+      zsh-users/zsh-completions
+      Aloxaf/fzf-tab
+
+#     --> popular fish-like plugins
+      zsh-users/zsh-autosuggestions
+      zsh-users/zsh-syntax-highlighting
+
+#     --> zsh-utils
+      belak/zsh-utils path:completion
+      belak/zsh-utils path:utility
