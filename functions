@@ -1,0 +1,80 @@
+# latest release from github
+_download_latest_github() {
+  source="$1"
+  get_url=$(curl -s https://api.github.com/repos/"$2"/"$3"/releases/latest | 
+    jq -r ".assets[] | select(.name | test(\"${source}\")) | .browser_download_url")
+  echo "downloading: $get_url"
+  curl -L -O --progress-bar $get_url
+}
+
+# --> fuzzy switcher function
+function nvims() {
+  items=("default" "QuartoNvim" "LazyVim" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+# --> use fzf to activate mamba envs
+function mamba-env() {
+  local selected_env
+  selected_env=$(
+      mamba env list | 
+      awk '(NR>2){print $1}' | 
+      fzf --prompt="󰌠  select mamba env  " --height=~50% --layout=reverse --border --exit-0
+    )
+    if [ -n "$selected_env" ]; then
+    mamba activate $selected_env
+  fi
+}
+
+# enable jupyter lab and quarto preview first
+# then pass the ports to the function
+_pop_jupyter() {
+  ssh -N \
+    -L localhost:9090:localhost:9090 \
+    -L localhost:"$1":localhost:"$1" \
+    -L localhost:"$2":localhost:"$2" \
+    rbmv@192.168.86.20 
+}
+
+# is a font installed?
+_font-installed() {printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}' | grep -i "$1"}
+
+# extract only the audio from online video
+_yt-mp3() {
+  youtube-dl --extract-audio --audio-format mp3 "$1"
+}
+
+# extract the subtitles from online video
+_yt-text() {
+  youtube-dl --write-sub --sub-lang en --skip-download "$1"
+}
+
+# resize an emote for discord
+_emote() {
+  convert "$1" -resize 240 -set filename:original %t '%[filename:original].png'
+}
+
+# resize a gif for discord
+_gif() {
+  convert "$1" -resize 80 -set filename:original %t '%[filename:original].gif'
+}
+
+_mov-to-gif() {
+  ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$2" 
+}
+
+# resize a png to make it smol
+_smolpng() {
+  convert "$1" -resize 150 -set filename:original %t '%[filename:original].png'
+}
+
+_heic-jpeg() {
+  for file in $1/*.heic ; do mv "$file" "${file%.*}.jpeg" ; done
+}

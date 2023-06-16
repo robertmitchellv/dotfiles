@@ -1,0 +1,29 @@
+# </> aliases
+
+# ==> convenience
+      alias zshrc="vim ~/.zshrc"
+      alias refresh="source ~/.zshrc"
+
+# ==> commands
+      alias cd..="cd ../"
+      alias c=' print ${(pl:$LINES::\n:):-} '
+      alias clear=' print ${(pl:$LINES::\n:):-} '
+      alias rm="echo 'use trash-cli; not rm  \ntrash-put\ttrash files + directories\ntrash-empty\tempty trash\ntrash-list\tlist trash\ntrash-resotre\trestore trashed file\ntrash-rm\tremove from trash'; false"
+      alias ls="exa --icons"
+      alias lsa="exa --icons -a"
+      alias git-nah="git reset --hard;git clean -df"
+      alias vim="nvim"
+      alias cat="bat"
+
+# ==> nvim switcher
+      alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+      alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+      alias nvim-quarto="NVIM_APPNAME=QuartoNvim nvim"
+
+# ==> connections
+      alias pop="ssh rbmv@192.168.86.20 -p1983"
+
+# ==> system
+      alias fonts="printf "%s\n" ~/Library/Fonts/* /Library/Fonts/* | awk -F/ '{print $NF}'"
+      alias R="radian"
+      alias unzip-all="for z in *.zip; do unzip $z; done"

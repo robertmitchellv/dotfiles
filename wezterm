@@ -1,0 +1,137 @@
+local wezterm = require "wezterm"
+local act = wezterm.action
+
+local palette = {
+  black = "#000000",
+  white = "#ffffff",
+  tabActiveBg = "#9194A3",
+  tabActiveFg = "#12172C",
+  tabInactiveBg = "#5C6177",
+  tabInactiveFg = "#181C30",
+  terminalRed = "#f7768e",
+  number = "#ff9e64",
+  terminalYellow = "#e0af68",
+  strings = "#9ece6a",
+  terminalGreen = "#73daca",
+  regex = "#b4f9f8",
+  langSupport = "#2ac3de",
+  terminalCyan = "#7dcfff",
+  terminalBlue = "#7aa2f7",
+  terminalMagenta = "#bb9af7",
+  terminalWhite = "#c0caf5",
+  foreground = "#a9b1d6",
+  text = "#9aa5ce",
+  parameters = "#cfc9c2",
+  comments = "#565f89",
+  background = "#24283b",
+}
+
+-- a helper function for my fallback fonts
+function font(name, params)
+  local names = { name, "Noto Color Emoji", "Symbols Nerd Font Mono", "JetBrains Mono" }
+  return wezterm.font_with_fallback(names, params)
+end
+
+return {
+  -- </> fonts
+  -- standard terminal font
+  font = font "Victor Mono",
+  font_size = 19.3,
+  line_height = 1.19,
+  cell_width = 1.07,
+  font_shaper = "Harfbuzz",
+  harfbuzz_features = { "kern", "liga", "clig", "calt" },
+
+  -- cursor
+  default_cursor_style = "BlinkingUnderline",
+
+  -- </> colors
+  -- theme
+  color_scheme = "tokyonight-storm",
+  colors = {
+    tab_bar = {
+      active_tab = { bg_color = palette.tabActiveBg, fg_color = palette.tabActiveFg },
+      inactive_tab = { bg_color = palette.tabInactiveBg, fg_color = palette.tabInactiveFg },
+      inactive_tab_hover = { bg_color = palette.text, fg_color = palette.background },
+      new_tab = { bg_color = palette.background, fg_color = palette.terminalMagenta },
+      new_tab_hover = { bg_color = palette.background, fg_color = palette.terminalCyan },
+    },
+  },
+
+  -- </> windows
+  window_padding = {
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+  -- scroll bar
+  enable_scroll_bar = true,
+  -- tab bar
+  show_tab_index_in_tab_bar = false,
+  tab_bar_at_bottom = true,
+  window_frame = {
+    font = font("Victor Mono", { italic = true }),
+    font_size = 15.6,
+    active_titlebar_bg = palette.background,
+    inactive_titlebar_bg = palette.background,
+    border_left_width = "0.8cell",
+  },
+
+  -- </> keys
+  keys = {
+    -- split into a column 'c' or a row 'r'
+    {
+      key = "c",
+      mods = "CTRL",
+      action = act.SplitHorizontal { domain = "CurrentPaneDomain" },
+    },
+    {
+      key = "r",
+      mods = "CTRL",
+      action = act.SplitVertical { domain = "CurrentPaneDomain" },
+    },
+    -- move around the panes with vim movements
+    {
+      key = "H",
+      mods = "CTRL",
+      action = act.ActivatePaneDirection "Left",
+    },
+    {
+      key = "L",
+      mods = "CTRL",
+      action = act.ActivatePaneDirection "Right",
+    },
+    {
+      key = "K",
+      mods = "CTRL",
+      action = act.ActivatePaneDirection "Up",
+    },
+    {
+      key = "J",
+      mods = "CTRL",
+      action = act.ActivatePaneDirection "Down",
+    },
+    -- adjust pane size with arrows
+    {
+      key = "LeftArrow",
+      mods = "CTRL",
+      action = act.AdjustPaneSize { "Left", 1 },
+    },
+    {
+      key = "RightArrow",
+      mods = "CTRL",
+      action = act.AdjustPaneSize { "Right", 1 },
+    },
+    {
+      key = "UpArrow",
+      mods = "CTRL",
+      action = act.AdjustPaneSize { "Up", 1 },
+    },
+    {
+      key = "DownArrow",
+      mods = "CTRL",
+      action = act.AdjustPaneSize { "Down", 1 },
+    },
+  },
+}
+
