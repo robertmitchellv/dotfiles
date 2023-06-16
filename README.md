@@ -24,13 +24,13 @@ this is needed for furnning some things on apple arm chips
 softwareupdate --install-rosetta
 ```
 
-### 2. Clone the repo
+### 2. clone the repo
 
 ```{bash}
 git clone https://github.com/robertmitchellv/dotfiles.git $HOME/dotfiles
 ```
 
-### 3. Homebrew
+### 3. homebrew
 
 install `homebrew` (check the [site](https://brew.sh/) to be sure the command below is correct, do _not_ blindly copy/paste into the terminal)
 
@@ -51,12 +51,23 @@ cd ~/dotfiles/
 brew bundle
 ```
 
-### 4. Create directories
+### 4. create directories
 
 the `create-structure.sh` script creates the code directories with a few repos i'll need
 
 ```{bash}
 chmod +x create-structure.sh
 ./create-structure.sh
+```
+
+### 5. symlink all the files
+
+```{bash}
+ln -s $HOME/dotfiles/starship.toml $HOME/.config/starship.toml
+ln -s $HOME/dotfiles/wezterm $HOME/.wezterm.lua
+ln -s $HOME/dotfiles/zsh_plugins $HOME/.zsh_plugins.txt
+ln -s $HOME/dotfiles/aliases $HOME/.aliases
+ln -s $HOME/dotfiles/functions $HOME/.functions
+ln -s $HOME/dotfiles/zshrc $HOME/.zshrc
 ```
 

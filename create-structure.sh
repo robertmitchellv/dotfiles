@@ -6,6 +6,9 @@ set -x
 # </> create temp for home
 mkdir $HOME/tmp
 
+# </> set up .config
+mkdir $HOME/.config
+
 # </> create code directories
 mkdir -p $HOME/code/{personal,professional,work}
 mkdir -p $HOME/code/work/{skylight,dph,dhs,srht}
