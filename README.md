@@ -2,7 +2,9 @@
 
 this is my simple new Mac setup repo
 
-### 1. XCode cli tools
+### 1. XCode cli tools + Rosetta
+
+#### XCode
 
 make sure you have the XCode cli tools installed; check by launching the terminal and typing `gcc`--if no cli tools exist, the system will prompt you to install
 
@@ -12,6 +14,14 @@ also, you can do this manually:
 
 ```{bash}
 xcode-select --install
+```
+
+#### Rosetta
+
+this is needed for furnning some things on apple arm chips
+
+```{bash}
+softwareupdate --install-rosetta
 ```
 
 ### 2. Clone the repo
