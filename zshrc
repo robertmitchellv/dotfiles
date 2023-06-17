@@ -43,6 +43,9 @@ echo " HOME sweet HOME "
 #     $ atuin gen-completions --shell zsh --out-dir $HOME
       eval "$(atuin init zsh)"
 
+#     --> fix spelling errors
+      eval $(thefuck --alias)
+
 #     --> conda
 #     |> start
       __conda_setup="$('/opt/homebrew/Caskroom/mambaforge/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
